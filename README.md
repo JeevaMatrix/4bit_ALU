@@ -41,11 +41,18 @@ This project implements a compact yet powerful **4-bit Arithmetic Logic Unit (AL
 
 ---
 
+##🧠 Design and Working
+This ALU is built using pure combinational logic to handle all arithmetic and logical operations based on a 4-bit opcode. It accepts two 4-bit inputs a and b, performs the selected operation, and outputs a 4-bit result ALU_out. Internally, an extended 5-bit register temp is used to detect carry-out from arithmetic operations. The ALU also sets key status flags (Zero, Negative, Carry, Overflow) based on the result, which are passed to a separate synchronous flag register module. This flag register updates its stored values on the positive edge of the clock when the update signal is asserted, allowing clean separation of combinational and sequential logic — a standard hardware design practice.
+
+Shifting operations include Logical Left (SLL), Logical Right (SRL), and Arithmetic Right (SRA). The SRA preserves the sign bit (MSB) for signed interpretations. Additionally, the ALU only performs operations when the enable signal is high, adding an extra layer of control suitable for CPU integration. The modular architecture reflects industry-grade ALU design practices, where the core ALU and the flag handling logic are separated for reuse and clarity, making the design scalable and synthesis-friendly.
+
 ## 🛠️ Usage
 
 ### 🧾 Compile & Simulate (Icarus Verilog)
 
 Tools used:
-VS code
-Icarus verilog
-GTKwave - waveform analysis
+-VS code
+
+-Icarus verilog
+
+-GTKwave - waveform analysis
