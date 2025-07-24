@@ -37,7 +37,7 @@ This project implements a compact yet powerful **4-bit Arithmetic Logic Unit (AL
 
 ## 🧪 Sample Waveform Output (via GTKWave)
 
-![ALU GTKWave Screenshot](docs/4bit_ALU.png) <!-- Optional if you include a waveform screenshot -->
+![ALU GTKWave Screenshot](/4bit_ALU.png) <!-- Optional if you include a waveform screenshot -->
 
 ---
 
